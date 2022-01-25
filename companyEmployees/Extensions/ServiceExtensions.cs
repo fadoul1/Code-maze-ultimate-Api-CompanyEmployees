@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Repository;
 
 namespace companyEmployees.Extensions
 {
@@ -21,8 +22,7 @@ namespace companyEmployees.Extensions
 
 
         public static void ConfigureIISIntegration(this IServiceCollection services) =>
-            services.Configure<IISOptions>(options =>
-            { });
+            services.Configure<IISOptions>(options => { });
 
         public static void ConfigureLoggerService(this IServiceCollection services) =>
             services.AddScoped<ILoggerManager, LoggerManager>();
@@ -32,5 +32,11 @@ namespace companyEmployees.Extensions
                 services.AddDbContext<RepositoryContext>(opts =>
                     opts.UseSqlServer(configuration.GetConnectionString("sqlConnection"), b =>
             b.MigrationsAssembly("companyEmployees")));
+
+        public static void ConfigureRepositoryManager(this IServiceCollection services) =>
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
+
+        public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
+            builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
     }
 }
