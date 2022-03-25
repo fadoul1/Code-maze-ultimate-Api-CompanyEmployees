@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace companyEmployees.Controllers
 {
@@ -16,9 +17,9 @@ namespace companyEmployees.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
-            _repository.Company.GetAllCompanies(false);
+            await _repository.Company.GetAllCompaniesAsync(false);
             _repository.Employee.GetType();
 
             return new string[] { "value1", "value2" };

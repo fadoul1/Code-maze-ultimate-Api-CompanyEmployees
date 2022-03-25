@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{F6C9422D-CD8E-467E-9CD9-AC500CB091A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "companyEmployees", "companyEmployees\companyEmployees.csproj", "{F2DDC550-9139-4264-9AC0-D80BDB962620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "companyEmployees", "companyEmployees\companyEmployees.csproj", "{F2DDC550-9139-4264-9AC0-D80BDB962620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{AA517FAB-8F85-4822-85EE-61D29452A899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{AA517FAB-8F85-4822-85EE-61D29452A899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
